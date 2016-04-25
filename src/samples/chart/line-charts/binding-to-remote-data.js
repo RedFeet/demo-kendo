@@ -1,9 +1,9 @@
 export class BindingToRemoteData {
   datasource = new kendo.data.DataSource({
     transport: {
-      read: function(options) {
-        return System.import('samples/chart/line-charts/json/spain-electricity.json!json')
-        .then(data => options.success(data));
+      read: {
+        url: "/../../../../../doc/kendo-api/dataviz/chart/spain-electricity.json",
+        dataType: "json"
       }
     },
     sort: {
